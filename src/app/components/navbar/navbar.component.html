@@ -1,0 +1,20 @@
+<nav>
+    <div class="perfil">
+        <ng-container *ngIf="auth.isAuthenticated$ | async">
+            <img *ngIf="auth.user$ | async as user" [src]="user.picture" alt="User Image" class="user-image" />
+        </ng-container>
+      <ul>
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/dashboard">Dashboard</a></li>
+      </ul>
+    </div>
+  <div>
+      @if(auth.isAuthenticated$ | async){
+      <button class="btn" (click)="auth.logout()">
+          Log out
+      </button>
+      } @else {
+      <button class="btn" (click)="tryLogin()">Log in</button>
+      }
+  </div>
+</nav>

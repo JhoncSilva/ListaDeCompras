@@ -1,0 +1,12 @@
+.home-content {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home-content ul {
+  list-style: none;
+}

@@ -1,0 +1,17 @@
+<div class="produto"
+  [ngClass]="{reminder: produto.comprado}"
+>
+  <input 
+    type="checkbox" 
+    [checked]="produto.comprado" 
+    (change)="onToggle(produto)" 
+    aria-label="marcar como comprado"
+  />
+  <h3>{{produto.nome}}
+    <div class="icons">
+      <fa-icon [icon]="faPencil" [ngStyle]="{'color': '#F57C00'}"></fa-icon>
+      <fa-icon [icon]="faTrash" [ngStyle]="{'color': '#D32F2F'}" (click)="onDelete(produto)"></fa-icon>
+    </div>
+  </h3>
+  <p>{{produto.quantidade}}</p>
+</div>

@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "google-oauth2|104023877091189934860",
+      "name": "Jhonatan Costa",
+      "email": "jhon.costa2004@gmail.com"
+    },
+    {
+      "id": "google-oauth2|108691343923101962760",
+      "name": "Jhonatan Costa",
+      "email": "jhoncs.004@gmail.com"
+    }
+  ],
+  "produto": [
+    {
+      "id": "1",
+      "nome": "Planejar reunião semanal",
+      "quantidade": 1,
+      "userId": "google-oauth2|104023877091189934860",
+      "comprado": true
+    },
+    {
+      "id": "1cc9",
+      "nome": "Teste",
+      "quantidade": 2,
+      "userId": "google-oauth2|104023877091189934860",
+      "comprado": false
+    },
+    {
+      "id": "ea8b",
+      "nome": "teste",
+      "quantidade": 2,
+      "userId": "google-oauth2|104023877091189934860",
+      "comprado": false
+    },
+    {
+      "id": "e89b",
+      "nome": "Teste",
+      "quantidade": 2,
+      "userId": "google-oauth2|108691343923101962760",
+      "comprado": false
+    }
+  ]
+}

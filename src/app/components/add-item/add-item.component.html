@@ -1,0 +1,29 @@
+@if (mostrarAddProduto) {
+  <app-button text="Fechar" color="#D32F2F" (btnClick)="AlteraVisualizacao(false)"></app-button>
+} @else {
+  <app-button text="Criar Produto" color="#28A745" (btnClick)="AlteraVisualizacao(true)"></app-button>
+}
+
+<form (ngSubmit)="onSubmit()" *ngIf="mostrarAddProduto">
+  <div>
+    <label for="text">Produto:</label>
+    <input type="text" 
+           name="product-name" 
+           class="product-name"
+           placeholder="Nome do seu produto"
+           id="product-name"
+           [(ngModel)]="produto">
+  </div>
+
+  <div>
+    <label for="quantidade">Quantidade:</label>
+    <input type="number" 
+           name="product-quantity" 
+           class="product-quantity"
+           placeholder="Quantidade de produtos"
+           id="product-quantity"
+           [(ngModel)]="quantidade">
+  </div>
+
+  <input type="submit" value="Salvar Produto" class="btn add-btn">
+</form>
