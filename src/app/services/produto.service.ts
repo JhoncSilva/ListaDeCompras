@@ -18,6 +18,10 @@ export class ProdutoService {
     return this.http.get<Produto[]>(this.apiUrl, { params });
   }
 
+  updateProduct(produto: Produto): Observable<Produto> {
+    return this.http.put<Produto>(`${this.apiUrl}/${produto.id}`, produto);
+  }
+
   deleteProduct(produto: Produto): Observable<Produto>{
     return this.http.delete<Produto>(`${this.apiUrl}/${produto.id}`);
   }

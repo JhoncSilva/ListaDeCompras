@@ -15,6 +15,7 @@ export class ListItemComponent {
   @Input() produto!:Produto;
   @Output() onDeleteProduct = new EventEmitter<Produto>();
   @Output() onToggleComprado = new EventEmitter<Produto>();
+  @Output() onEditProduct = new EventEmitter<Produto>();
 
   faTrash = faTrash;
   faPencil = faPencil;
@@ -25,5 +26,9 @@ export class ListItemComponent {
 
   onToggle(produto: Produto){
     this.onToggleComprado.emit(produto);
+  }
+
+  onEdit(produto: Produto) {
+    this.onEditProduct.emit(produto);
   }
 }

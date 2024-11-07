@@ -7,11 +7,44 @@
     let produto of produtos"
     [produto]="produto"
     (onDeleteProduct)="deleteProduct($event)"
-    (onToggleComprado)="toggleCompra($event)">
+    (onToggleComprado)="toggleCompra($event)"
+    (onEditProduct)="editProduct($event)">
     </app-list-item>
   </div>
 
   <ng-template #noProducts>
-    <p>Não há produtos para exibir.</p>
+    <div class="nop">
+      <p>Não há produtos para exibir.</p>
+    </div>
   </ng-template>
+
+  <div *ngIf="produtoParaEditar">
+    <form (ngSubmit)="updateProduct(produtoParaEditar)">
+      <div>
+        <label for="nome">Nome:</label>
+        <input 
+          type="text" 
+          [(ngModel)]="produtoParaEditar.nome" 
+          name="nome" 
+          id="nome" 
+          class="product-name"
+          required />
+      </div>
+  
+      <div>
+        <label for="quantidade">Quantidade:</label>
+        <input 
+          type="number" 
+          [(ngModel)]="produtoParaEditar.quantidade" 
+          name="quantidade" 
+          id="quantidade" 
+          class="product-quantity"
+          required 
+        />
+      </div>
+  
+      <button type="submit" class="btn add-btn">Salvar</button>
+      <button type="button" class="btn add-btn cnc-btn" (click)="produtoParaEditar = null">Cancelar</button>
+    </form>
+  </div>
 </div>

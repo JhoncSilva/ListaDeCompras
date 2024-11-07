@@ -9,11 +9,11 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     provideAuth0({
-      domain: 'dev-qfpps0z4ash2cqz5.us.auth0.com',
-      clientId: '7znmRP2B7hahFvwBjerxVYxoDQUHRkSd',
+      domain: '{ApplicationDomain}',
+      clientId: '{ApplicationClientId}',
       authorizationParams: {
         redirect_uri: window.location.origin,
-        audience: 'https://dev-qfpps0z4ash2cqz5.us.auth0.com/api/v2/',
+        audience: '{APIAudience}',
         scope: 'openid profile email offline_access',
       },
       useRefreshTokens: true,

@@ -5,11 +5,12 @@ import { Produto } from '../../models/produto.model';
 import { ProdutoService } from '../../services/produto.service';
 import { AuthService } from '@auth0/auth0-angular';
 import { AddItemComponent } from "../add-item/add-item.component";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CommonModule, ListItemComponent, AddItemComponent],
+  imports: [CommonModule, ListItemComponent, AddItemComponent, FormsModule],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
@@ -17,6 +18,7 @@ export class ListComponent implements OnInit {
   produtos: Produto[] = [];
   userId: string | undefined;
   isLoading: boolean = true;
+  produtoParaEditar: Produto | null = null;
 
   constructor(
     private produtoService: ProdutoService,
@@ -57,7 +59,20 @@ export class ListComponent implements OnInit {
     (error) => {
       console.error('Erro ao criar produto', error);
     }
-  );
+    );
+  }
+
+  editProduct(produto: Produto): void {
+    this.produtoParaEditar = { ...produto }; 
+  }
+
+  updateProduct(produto: Produto): void {
+    this.produtoService.updateProduct(produto).subscribe(() => {
+      this.loadProducts();
+      this.produtoParaEditar = null; 
+    }, (error) => {
+      console.error('Erro ao atualizar produto', error);
+    });
   }
 
   deleteProduct(produto: Produto) {

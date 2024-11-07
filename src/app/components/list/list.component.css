@@ -1,0 +1,69 @@
+.products {
+  text-align: center;
+  margin: 5% 0 20%;
+}
+
+.nop {
+  font-size: 32px;
+}
+
+form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: rgb(150, 214, 160);
+  color: #212529;
+  border-radius: 20px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form .product-quantity, form .product-name {
+  width: 30%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #f0f0f0;
+}
+
+.btn {
+  transition: 300ms;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  background-color: #2ebe50;
+}
+
+.cnc-btn {
+  background-color: #D32F2F !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .products {
+    text-align: center;
+    margin: 15% 0 20%;
+  }
+
+  .nop {
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    form .product-quantity, form .product-name {
+      width: 60%;
+    }
+  }
+}
